@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{9727C100-D1E4-43B3-97FB-2818DE0AF8A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "TestServer\Tests.csproj", "{9727C100-D1E4-43B3-97FB-2818DE0AF8A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourApi", "..\YourApi\YourApi.csproj", "{E28A5F57-0DCC-4566-A2B8-37552B4BF3A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourApi", "YourApi\YourApi.csproj", "{E28A5F57-0DCC-4566-A2B8-37552B4BF3A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
