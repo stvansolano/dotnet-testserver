@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "TestServer\Tests.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourApi", "YourApi\YourApi.csproj", "{E28A5F57-0DCC-4566-A2B8-37552B4BF3A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F68442FC-69E1-4D3B-8AA8-B98B35FC9B82}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
