@@ -12,6 +12,7 @@ A ready-to-use Test Server implementation for your ASP.NET Core 3.1 project.
 
 - xUnit & Test-runnner for TDD (Test-Driven Development)
 - Docker-Compose support for executing tests
+- GitHub actions support (Docker)
 
 ## How to use
 1) Copy/clone this project

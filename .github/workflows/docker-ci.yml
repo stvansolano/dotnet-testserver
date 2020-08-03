@@ -1,0 +1,22 @@
+
+name: Docker-Test Continuous Integration
+
+on:
+  push:
+    branches:
+      - 'main'
+
+    paths:
+    - '.github/workflows/docker-ci.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      env:
+        image: dotnet-testserver
+      run: |
+        docker build -f src/TestServer/Dockerfile . -t $image:latest
