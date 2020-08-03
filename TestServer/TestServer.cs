@@ -7,8 +7,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.IO;
 using System.Reflection;
-
-using YourApi;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Tests
@@ -27,7 +25,7 @@ namespace Tests
                     cb.AddJsonFile("appsettings.json", optional: false)
                     .AddEnvironmentVariables();
                 })
-                .UseStartup<Startup>();
+                .UseStartup<YourApi.Startup>();
 
 
             var testServer = new TestServer(hostBuilder);
