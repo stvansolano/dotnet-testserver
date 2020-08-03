@@ -8,14 +8,3 @@ services:
     build:
       context: .
       dockerfile: TestServer/Dockerfile
-
-  db-sql-server:
-    container_name: db-sql-server
-    # AUTHOR/NAME:TAG {latest, alpine, v1, v2, v3}
-    image: stvansolano/adventure-works-sql-server:latest
-    ports:
-      # HOST:CONTAINER
-      - 1433:1433
-    environment:
-      SA_PASSWORD: "Password.123"
-      ACCEPT_EULA: "Y"

@@ -19,4 +19,4 @@ jobs:
       env:
         image: dotnet-testserver
       run: |
-        docker build -f src/TestServer/Dockerfile . -t $image:latest
+        docker build -f src/TestServer/Dockerfile src -t $image:latest
