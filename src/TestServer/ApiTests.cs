@@ -7,6 +7,7 @@ namespace Tests
     {
         [Theory]
         [InlineData("/api/hello")]
+        [InlineData("/api/categories")]
         public async Task Get_HelloWorld(string url)
         {
             // Arrange
