@@ -36,7 +36,7 @@ namespace YourApi
         {
             services.AddRouting();
 
-            var defaultDatabase = Configuration.GetConnectionString("ConnectionStrings__DefaultDatabase") 
+            var defaultDatabase = Configuration.GetConnectionString("DefaultDatabase") 
                 ?? System.Environment.GetEnvironmentVariable("ConnectionStrings__DefaultDatabase");
 
             if (string.IsNullOrEmpty(defaultDatabase)){

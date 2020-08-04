@@ -9,7 +9,9 @@ services:
       context: .
       dockerfile: TestServer/Dockerfile
     environment:
-        - environment=Production
+        - ASPNETCORE_ENVIRONMENT=Production
+        - ASPNETCORE_URLS=https://*:80
+        - ConnectionStrings__DefaultDatabase=data source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework
     depends_on:
       - your-api
 
@@ -24,7 +26,7 @@ services:
         - ASPNETCORE_URLS=https://*:80
         - ConnectionStrings__DefaultDatabase=data source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework
     ports:
-      - 81:80
+      - 80:80
     depends_on:
       - db-sql-server
       
