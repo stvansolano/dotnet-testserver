@@ -24,7 +24,6 @@ namespace YourApi
 				  .Run();
 
         public IConfiguration Configuration { get; }
-        public ILogger<IConfiguration> Logger { get; }
 
         public Startup(IConfiguration configuration)
 		{
