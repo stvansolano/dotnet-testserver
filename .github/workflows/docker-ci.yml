@@ -4,7 +4,7 @@ name: Docker-Test Continuous Integration
 on:
   push:
     branches:
-      - 'main'
+      - '**'
 
     paths:
     - '.github/workflows/docker-ci.yml'
@@ -15,8 +15,6 @@ jobs:
     steps:
     
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      env:
-        image: dotnet-testserver
+    - name: Build and Test Docker images
       run: |
-        docker build -f src/TestServer/Dockerfile src -t $image:latest
+        docker-compose -f src/docker-compose.yml up
