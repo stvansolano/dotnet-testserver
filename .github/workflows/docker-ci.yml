@@ -8,6 +8,7 @@ on:
 
     paths:
     - '.github/workflows/docker-ci.yml'
+    - 'src'
 
 jobs:
   build:

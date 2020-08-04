@@ -1,5 +1,7 @@
 # ASP.NET Test Server
 
+![Docker-Test Continuous Integration](https://github.com/stvansolano/dotnet-testserver/workflows/Docker-Test%20Continuous%20Integration/badge.svg)
+
 [Twitter: @stvansolano](https://twitter.com/stvansolano)
 
 ## Do you like it? Give a Star! :star:
