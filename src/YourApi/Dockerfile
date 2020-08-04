@@ -21,4 +21,4 @@ EXPOSE 80
 #ENV ConnectionStrings__DefaultDatabase $ConnectionStrings__DefaultDatabase
 
 # docker build -f Dockerfile -t your-api:latest .
-# docker run -d  -p 443:443/tcp -p 80:80/tcp your-api:latest -e ConnectionStrings__DefaultDatabase="data source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework"
+# docker run -d  -p 443:443/tcp -p 80:80/tcp your-api:latest -e ConnectionStrings__DefaultDatabase="Data Source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFrameworkApp=EntityFramework"

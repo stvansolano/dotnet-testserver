@@ -6,9 +6,12 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 COPY [".", "."]
 WORKDIR /TestServer
+
+ENV ConnectionStrings__DefaultDatabase="Data Source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFrameworkApp=EntityFramework"
+
 RUN dotnet restore "Tests.csproj"
 RUN dotnet build "Tests.csproj" -c Release -o /app/build
-RUN [ "dotnet", "test" ]
+RUN ["dotnet", "test" ]
 
 ### How to run tests (from root folder):
 ### docker build --pull --rm -f "src/TestServer/Dockerfile" -t testserver:latest .

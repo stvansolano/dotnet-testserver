@@ -16,6 +16,6 @@
     
         dotnet tool install - -global dotnet-ef
         dotnet ef
-        dotnet ef dbcontext scaffold "data source=localhost;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -o Models
+        dotnet ef dbcontext scaffold "Server=localhost;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -o Models
     -->
 </Project>

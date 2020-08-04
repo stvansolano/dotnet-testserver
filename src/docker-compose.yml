@@ -3,6 +3,19 @@
 version: '3.4'
 
 services:
+   
+  db-sql-server:
+    # AUTHOR/NAME:TAG {latest, alpine, v1, v2, v3}
+    build:
+      context: Infrastructure/SqlServer
+      dockerfile: Dockerfile
+    environment:
+      SA_PASSWORD: "Password.123"
+      ACCEPT_EULA: "Y"
+    ports:
+      # HOST:CONTAINER
+      - 1433:1433
+  
   TestServer:
     image: test-server
     build:
@@ -10,13 +23,12 @@ services:
       dockerfile: TestServer/Dockerfile
     environment:
         - ASPNETCORE_ENVIRONMENT=Production
-        - ASPNETCORE_URLS=https://*:80
-        - ConnectionStrings__DefaultDatabase=data source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework
+        - ASPNETCORE_URLS=https://*:5000
     depends_on:
+      - db-sql-server
       - your-api
 
   your-api:
-    container_name: your-api
     image: your-api
     build:
       context: .
@@ -24,21 +36,8 @@ services:
     environment:
         - ASPNETCORE_ENVIRONMENT=Production
         - ASPNETCORE_URLS=https://*:80
-        - ConnectionStrings__DefaultDatabase=data source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework
-    ports:
-      - 80:80
+        - ConnectionStrings__DefaultDatabase=Data Source=db-sql-server,1433;initial catalog=TestDatabase;persist security info=True;user id=sa;password=Password.123;MultipleActiveResultSets=True;App=EntityFramework
     depends_on:
       - db-sql-server
-      
-  db-sql-server:
-    container_name: db-sql-server
-    # AUTHOR/NAME:TAG {latest, alpine, v1, v2, v3}
-    build:
-      context: Infrastructure/SqlServer
-      dockerfile: Dockerfile
     ports:
-      # HOST:CONTAINER
-      - 1433:1433
-    environment:
-      SA_PASSWORD: "Password.123"
-      ACCEPT_EULA: "Y"
+      - 80:80
